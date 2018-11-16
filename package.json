@@ -8,8 +8,8 @@
       "version": "5.0.0"
     }
   },
-  "description": "Reader for CCCC",
-  "license": "SEE LICENSE IN <your-license-filename>",
+  "description": "Reader for Compendium of the Catechism of the Catholic Church",
+  "license": "SEE LICENSE IN LICENSE",
   "repository": "https://github.com/TerrenceJohns/rcia.git",
   "scripts": {
     "lint": "eslint \"app/**/*.js\""
@@ -25,5 +25,5 @@
     "nativescript-dev-sass": "~1.6.0",
     "nativescript-dev-webpack": "~0.17.0"
   },
-  "readme": "NativeScript Application"
+  "readme": "README.md"
 }
