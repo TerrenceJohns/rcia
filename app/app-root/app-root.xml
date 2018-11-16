@@ -1,0 +1,60 @@
+<!--
+RadSideDrawer is a UI component part of the Progress NativeScript UI set of components.
+Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
+http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/getting-started
+-->
+<nsDrawer:RadSideDrawer id="sideDrawer" xmlns:nsDrawer="nativescript-ui-sidedrawer" loaded="onLoaded">
+    <nsDrawer:RadSideDrawer.drawerTransition>
+        <nsDrawer:SlideInOnTopTransition/>
+    </nsDrawer:RadSideDrawer.drawerTransition>
+
+    <nsDrawer:RadSideDrawer.drawerContent>
+        <GridLayout rows="auto, *" class="sidedrawer sidedrawer-left">
+            <StackLayout class="sidedrawer-header">
+                <Image class="sidedrawer-header-image" src="res://logo" />
+                <Label class="sidedrawer-header-brand" text="RCIA Resource Application" />
+                <Label class="footnote" text="Contents" />
+            </StackLayout>
+
+            <ScrollView row="1">
+                <StackLayout class="sidedrawer-content">
+                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Home' ? ' selected': '') }}"
+                        route="home/home-page" title="Home" tap="onNavigationItemTap">
+                        <Label row="0" col="0" text="&#xf015;" class="fa"  />
+                        <Label row="0" col="1" text="Contents" class="p-r-10" />
+                    </GridLayout>
+
+                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Cccc' ? ' selected': '') }}"
+                        route="cccc/cccc-page" title="Cccc" tap="onNavigationItemTap">
+                        <Label row="0" col="0" text="&#xf02d;" class="fa" />
+                        <Label row="0" col="1" text="Compendium Catechism" class="p-r-10" />
+                    </GridLayout>
+
+                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Lists' ? ' selected': '') }}"
+                        route="lists/lists-page" title="Lists" tap="onNavigationItemTap">
+                        <Label row="0" col="0" text="&#xf03a;" class="fa" />
+                        <Label row="0" col="1" text="Formulas of Catholic Doctrine" class="p-r-10" />
+                    </GridLayout>
+
+                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Prayers' ? ' selected': '') }}"
+                        route="prayers/prayers-page" title="Prayers" tap="onNavigationItemTap">
+                        <Label row="0" col="0" text="&#xf067;" class="fa" />
+                        <Label row="0" col="1" text="Common Prayers" class="p-r-10" />
+                    </GridLayout>
+
+                    <StackLayout class="hr-light"></StackLayout>
+
+                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'About' ? ' selected': '') }}"
+                        route="about/about-page" title="About" tap="onNavigationItemTap">
+                        <Label row="0" col="0" text="&#xf013;" class="fa" />
+                        <Label row="0" col="1" text="About" class="p-r-10" />
+                    </GridLayout>
+                </StackLayout>
+            </ScrollView>
+        </GridLayout>
+    </nsDrawer:RadSideDrawer.drawerContent>
+
+    <nsDrawer:RadSideDrawer.mainContent>
+        <Frame defaultPage="home/home-page"></Frame>
+    </nsDrawer:RadSideDrawer.mainContent>
+</nsDrawer:RadSideDrawer>

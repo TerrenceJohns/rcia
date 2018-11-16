@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    
+
+
+
+<!-- BEGIN: headlibs -->
+<meta name="robots" content="index,follow">
+
+<script type="text/javascript" src="http://w2.vatican.va/etc/clientlibs/granite/clientlibrarymanager.min.js"></script>
+<script type="text/javascript">
+GraniteClientLibraryManager.write([{"p":"/etc/clientlibs/granite/jquery.min.js","c":[]},{"p":"/etc/clientlibs/granite/utils.min.js","c":[]},{"p":"/etc/clientlibs/granite/jquery/granite.min.js","c":[]},{"p":"/etc/clientlibs/foundation/jquery.min.js","c":[]},{"p":"/etc/clientlibs/foundation/main.min.css","c":[]},{"p":"/etc/clientlibs/foundation/main.min.js","c":[]},{"p":"/etc/designs/generics2/library/clientlibs.min.css","c":[]},{"p":"/etc/designs/generics2/library/clientlibs.min.js","c":[]},{"p":"/etc/designs/vatican/library/clientlibs.min.css","c":[]},{"p":"/etc/designs/vatican/library/clientlibs.min.js","c":[]},{"p":"/etc/designs/vatican/library/clientlibs/ie6/themes/default.min.css","c":["ie6"]}],false);
+</script>
+
+
+<!-- END: headlibs -->
+    
+
+    
+
+    
+    
+    <link rel="icon" type="image/vnd.microsoft.icon" href="http://w2.vatican.va/etc/designs/vatican/favicon.ico">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://w2.vatican.va/etc/designs/vatican/favicon.ico">
+    
+    
+
+
+
+
+
+
+    <title>Vatican</title>
+</head>
+    <body>
+    <div class="siv-maincontainer">
+        <div style="max-width:800px;padding:100px;margin: auto;">
+        <div class="parbase redirect">
+    <script type="text/javascript">
+    //IE8 indexOf fix
+    if (!Array.prototype.indexOf) {
+        Array.prototype.indexOf = function(obj, start) {
+             for (var i = (start || 0), j = this.length; i < j; i++) {
+                 if (this[i] === obj) { return i; }
+             }
+             return -1;
+        }
+    }
+    
+    var langArray = new Array();
+        langArray[0] = "it";
+    
+    var langDefault = "it";
+    
+    var langBrowser = window.navigator.language || window.navigator.userLanguage;
+    if(langBrowser){
+        langBrowser = langBrowser.toLowerCase().substring(0,2);
+    }
+    
+    var urlRedirect = null;
+    var ind = langArray.indexOf(langBrowser);
+    
+    if(ind>=0){
+        urlRedirect = "/content/vatican/"+langArray[ind]+".html";
+    }else{
+        urlRedirect = "/content/vatican/"+langDefault+".html";
+    }
+    
+    function redir(){
+        if(urlRedirect!=null){
+            location.href=urlRedirect;
+        }
+    }
+    
+    </script>
+    
+
+
+    <script type="text/javascript">
+    redir();
+    </script>
+</div>
+
+        </div>
+    </div>
+</body>
+</html>
