@@ -18,7 +18,7 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
 
             <ScrollView row="1">
                 <StackLayout class="sidedrawer-content">
-                    <Label text="RESOURCES" textWrap="False" />
+                    <Label text="RESOURCES" textWrap="False" textBold="True" class="p-10" />
                     <StackLayout class="hr-light"></StackLayout>
                     <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Home' ? ' selected': '') }}"
                         route="home/home-page" title="Home" tap="onNavigationItemTap">
@@ -26,23 +26,15 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                         <Label row="0" col="1" text="Compendium Catechism" class="p-r-10" />
                     </GridLayout>
 
-                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Cccc' ? ' selected': '') }}"
-                        route="cccc/cccc-page" title="Cccc" tap="onNavigationItemTap">
-                        <Label row="0" col="0" text="&#xf02d;" class="fa" />
-                        <Label row="0" col="1" text="Compendium Catechism" class="p-r-10" />
+                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'About' ? ' selected': '') }}"
+                        route="gospels/gospels-page" title="Gospels" tap="onNavigationItemTap">
+                        <Label row="0" col="0" text="&#xf013;" class="fa" />
+                        <Label row="0" col="1" text="The Gospels" class="p-r-10" />
                     </GridLayout>
 
-                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Lists' ? ' selected': '') }}"
-                        route="lists/lists-page" title="Lists" tap="onNavigationItemTap">
-                        <Label row="0" col="0" text="&#xf03a;" class="fa" />
-                        <Label row="0" col="1" text="Formulas of Catholic Doctrine" class="p-r-10" />
-                    </GridLayout>
+                   
 
-                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Prayers' ? ' selected': '') }}"
-                        route="prayers/prayers-page" title="Prayers" tap="onNavigationItemTap">
-                        <Label row="0" col="0" text="&#xf067;" class="fa" />
-                        <Label row="0" col="1" text="Common Prayers" class="p-r-10" />
-                    </GridLayout>
+                    <StackLayout class="hr-light"></StackLayout>
 
                     <StackLayout class="hr-light"></StackLayout>
 
