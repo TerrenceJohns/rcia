@@ -32,7 +32,7 @@ function onDrawerButtonTap(args) {
 function onWebViewLoaded(webargs){
     webview = webargs.object;
         webview.android.getSettings().setDisplayZoomControls(false);
-        webview.android.getSettings().setBuiltInZoomControls(false);
+        //webview.android.getSettings().setBuiltInZoomControls(false);
 }
 
 function onTopTap(){

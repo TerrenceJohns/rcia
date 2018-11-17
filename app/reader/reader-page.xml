@@ -1,0 +1,29 @@
+<Page 
+    xmlns="http://www.nativescript.org/tns.xsd"  
+    navigatingTo="onNavigatingTo">
+    
+    <ActionBar class="action-bar" title="{{ title}}" >
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
+        <ActionItem tap="sizeUp"
+            ios.position="left">
+            <Label text="&#xf00e;" class="fa"  />
+        </ActionItem>
+    </ActionBar>
+        <ScrollView pinch="onPinch" >
+            <Repeater id="rptVerses" items="{{ verses }}" class="m-l-15">
+                <Repeater.itemsLayout>
+                    <StackLayout />
+                </Repeater.itemsLayout>
+                <Repeater.itemTemplate>
+                    <StackLayout class="list-group-item" orientation="horizontal" >
+                    <Label text="{{ number }}" textWrap="false" class="number m-t-5" verticalAlignment="top" fontSize="{{ 18 * scale}}"   />
+                    <Label text="{{ text }}" textWrap="true" class="text m-l-10 m-r-10 m-t-5"  fontSize="{{ 20 * scale}}"  />
+                </StackLayout>
+                </Repeater.itemTemplate>
+            </Repeater>
+        </ScrollView>
+    
+            
+            
+            
+</Page>

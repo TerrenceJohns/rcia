@@ -31,17 +31,17 @@
         <ListView id="lstViewMain" items="{{ contents }}"  
           itemTap="onItemTap"
           separatorColor="blue" 
-          class="list-group" id="listView" >
+          class="list-group"  >
             <ListView.itemTemplate tap="showChapters">
                 <!-- The item template can only have a single root view container (e.g. GriLayout, StackLayout, etc.) -->
                 <StackLayout class="list-group-item">
-                    <Label text="{{ pre }}" textWrap="true" class="pre"  />
-                    <Label text="{{ title }}" textWrap="true" class="title bold" />
+                    <Label text="{{ pre }}" textWrap="true" class="pre" fontSize="18"  />
+                    <Label text="{{ title }}" textWrap="true" class="title bold" fontSize="20" />
                     <Repeater id="rptChapters" items="{{ chapters }}" visibility="{{ visible }}"  >
                         <Repeater.itemTemplate >
                             <StackLayout tap="rptItemTap">
-                                <Label text="{{ $value.pre }}" class="pre m-t-5" marginLeft="{{ $value.indent }}"  />
-                                <Label text="{{ $value.subtitle }}" class="title" marginLeft="{{ $value.indent }}"  />
+                                <Label text="{{ $value.pre }}" class="pre m-t-5" marginLeft="{{ $value.indent }}" fontSize="16"  />
+                                <Label text="{{ $value.subtitle }}" class="title" marginLeft="{{ $value.indent }}" fontSize="18"  />
                             </StackLayout>
                         </Repeater.itemTemplate>
                     </Repeater>

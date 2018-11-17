@@ -9,14 +9,21 @@ $sidedrawer-list-item-offset-left: 15;
 $sidedrawer-list-icon-offset: 10;
 $sidedrawer-list-icon-size: 25;
 $sidedrawer-list-item-font-size: 16;
+$reader-base-font-size:16;
+
 .title {
     color:navy;
-    font-size:16
+    
 }
 
 .pre {
     color:#663300;
-    font-size:16
+    
+}
+
+.number {
+    color:#663300;
+    
 }
 
 .sidedrawer {
