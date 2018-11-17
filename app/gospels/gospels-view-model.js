@@ -6,27 +6,31 @@ function GospelsViewModel() {
     SelectedPageService.getInstance().updateSelectedPage("Gospels");
 
     const viewModel = observableModule.fromObject({
-        title: "The Gospels",
+        title: "Gospels",
         books:[
             {
-                name:"Mathew",
+                name:"Matthew",
                 abbr:"Mt",
-                args:""
+                args:"mathew.json",
+                chapters:[]
             },
             {
                 name:"Mark",
                 abbr:"Mk",
-                args:""
+                args:"mark.json",
+                chapters:[]
             },
             {
                 name:"Luke",
                 abbr:"Lk",
-                args:""
+                args:"luke.json",
+                chapters:[]
             },
             {
                 name:"John",
-                abbr:"Jn",
-                args:""
+                abbr:"Jo",
+                args:"john.json",
+                chapters:[]
             }
         ]
     });
