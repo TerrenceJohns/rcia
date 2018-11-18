@@ -11,6 +11,7 @@ var colorModule = require("tns-core-modules/color");
 
 var page;
 var selectedBook = false;
+var fl = false;
 
 function onNavigatingTo(args) {
     page = args.object;
@@ -27,14 +28,16 @@ function onDrawerButtonTap(args) {
 
 function onItemTap(args) {
     selectedBook = false;
+    fl = false;
     var i = args.index;
     var books = page.bindingContext.books;
     if (books[i].visible == "visible") {
         books[i].visible = "collapse";
     } else {
-        collapseAll();
+        //collapseAll();
         books[i].visible = "visible";
         selectedBook = books[i].name;
+        fl = books[i].args;
 
     }
     var bookView = view.getViewById("lstViewMain");
@@ -51,11 +54,11 @@ function collapseAll() {
     });
 }
 
-function navigate(bookName, chapter) {
+function navigate(bookName,filename, chapter) {
 
     frameModule.topmost().navigate({
         moduleName: "reader/reader-page",
-        context: { bookName: bookName, chapter:chapter },
+        context: { bookName: bookName,filename:filename, chapter:chapter },
         transition: {
             name: "fade"
 
@@ -70,7 +73,7 @@ function onChapterTap(args) {
         opacity: 20,
         duration: 500
     });
-    navigate(selectedBook, index);
+    navigate(selectedBook,fl, index);
 
 }
 function onPinch(args) {

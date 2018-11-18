@@ -5,19 +5,19 @@ const frameModule = require("tns-core-modules/ui/frame");
 const listViewModule = require("tns-core-modules/ui/list-view");
 const ReaderViewModel = require("./reader-view-model");
 var colorModule = require("tns-core-modules/color");
-
+var selectedHighlight = "highlight1";
 
 var page;
 
 function onNavigatingTo(args) {
     page = args.object;
-    console.log(page.navigationContext);
     var bookName = page.navigationContext.bookName;
+    var filename = page.navigationContext.filename;
     var chapter = page.navigationContext.chapter;
     var bibleBook = {title:"", verses:[] };
 
     var bookData = new ReaderViewModel(
-        bookName, 
+        filename, 
         function(data){
             bibleBook.verses = []; 
             var verses = data.chapters[chapter - 1];
@@ -41,32 +41,15 @@ function onDrawerButtonTap(args) {
     sideDrawer.showDrawer();
 }
 
-function onItemTap(args){
-    var i = args.index;
-    var books = page.bindingContext.books;
-    if(books[i].visible == "visible") {
-        books[i].visible = "collapse";
+function onLongPress(args) {
+    if(args.view.get("class").indexOf('highlight') != -1){
+        args.view.set("class",args.view.get("class").replace('highlight1','').
+            replace('highlight2','').replace('highlight3','').replace('highlight4',''));
     } else {
-        collapseAll();
-        books[i].visible = "visible";
+        args.view.set("class",args.view.get("class") + ' ' + selectedHighlight);
+    }
         
-    }
-    var bookView = view.getViewById("lstViewMain");
-    if(bookView){
-        args.object.refresh();
-    }
-    
 }
-function sizeUp(args){
-    var viewModel = page.bindingContext;
-    viewModel.verses.forEach(elem=>{
-        elem.increase +=2;
-    }); 
-    var repeater = view.getViewById(page,"rptVerses");
-    repeater.refresh(); 
-    console.log(viewModel.increase);
-}
-
 
 function onPinch(args) {
     var viewModel = page.bindingContext;
@@ -85,7 +68,11 @@ function onPinch(args) {
     }
     
 }
+function selectHighlight(args) {
+    selectedHighlight = args.object.get("class");
+}
+exports.selectHighlight = selectHighlight;
 exports.onPinch = onPinch;
-exports.sizeUp = sizeUp;
+exports.onLongPress = onLongPress;
 exports.onNavigatingTo = onNavigatingTo;
 exports.onDrawerButtonTap = onDrawerButtonTap;

@@ -4,24 +4,31 @@
     
     <ActionBar class="action-bar" title="{{ title}}" >
         <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
-        <ActionItem tap="sizeUp"
-            ios.position="left">
-            <Label text="&#xf00e;" class="fa"  />
-        </ActionItem>
+        
     </ActionBar>
+    <StackLayout orientation="vertical" >
+        <StackLayout orientation="horizontal" class="highlightButtonBar" >
+            <Button text="1" tap="selectHighlight" class="highlight1" />
+            <Button text="2" tap="selectHighlight" class="highlight2" />
+            <Button text="3" tap="selectHighlight" class="highlight3" />
+            <Button text="4" tap="selectHighlight" class="highlight4" />
+        </StackLayout>
         <ScrollView pinch="onPinch" >
-            <Repeater id="rptVerses" items="{{ verses }}" class="m-l-15">
+        <Repeater id="rptVerses" items="{{ verses }}" >
                 <Repeater.itemsLayout>
-                    <StackLayout />
+                    <StackLayout  />
                 </Repeater.itemsLayout>
                 <Repeater.itemTemplate>
-                    <StackLayout class="list-group-item" orientation="horizontal" >
-                    <Label text="{{ number }}" textWrap="false" class="number m-t-5" verticalAlignment="top" fontSize="{{ 18 * scale}}"   />
-                    <Label text="{{ text }}" textWrap="true" class="text m-l-10 m-r-10 m-t-5"  fontSize="{{ 20 * scale}}"  />
+                    <StackLayout class="{{ number % 2 != 0 ? 'list-group-item ':'list-group-item alt' }}" orientation="horizontal" longPress="onLongPress"  >
+                    <Label text="{{ number }}" textWrap="false" class="number m-t-5 m-l-10" verticalAlignment="top" fontSize="{{ 18 * scale}}"   />
+                    <Label text="{{ text }}" textWrap="true" class="text m-l-5 m-r-10 m-t-5"  fontSize="{{ 20 * scale}}" />
                 </StackLayout>
                 </Repeater.itemTemplate>
             </Repeater>
         </ScrollView>
+        
+    
+    </StackLayout>
     
             
             

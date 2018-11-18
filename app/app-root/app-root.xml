@@ -22,13 +22,13 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                     <StackLayout class="hr-light"></StackLayout>
                     <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Home' ? ' selected': '') }}"
                         route="home/home-page" title="Home" tap="onNavigationItemTap">
-                        <Label row="0" col="0" text="&#xf16c;" class="fa" fontSize="18"  />
+                        <Label row="0" col="0" text="&#xf02d;" class="fas" fontSize="18"  />
                         <Label row="0" col="1" text="Compendium Catechism" class="p-r-10" fontSize="18" />
                     </GridLayout>
 
                     <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Gospels' ? ' selected': '') }}"
                         route="gospels/gospels-page" title="Gospels" tap="onNavigationItemTap">
-                        <Label row="0" col="0" text="&#xf02d;" class="fa" fontSize="18" />
+                        <Label row="0" col="0" text="&#xf647;" class="fas" fontSize="18" />
                         <Label row="0" col="1" text="The Gospels" class="p-r-10" fontSize="18" />
                     </GridLayout>
 
@@ -40,7 +40,7 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
 
                     <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'About' ? ' selected': '') }}"
                         route="about/about-page" title="About" tap="onNavigationItemTap">
-                        <Label row="0" col="0" text="&#xf05a;" class="fa" fontSize="18" />
+                        <Label row="0" col="0" text="&#xf05a;" class="fas" fontSize="18" />
                         <Label row="0" col="1" text="About" class="p-r-10" fontSize="18" />
                     </GridLayout>
                 </StackLayout>

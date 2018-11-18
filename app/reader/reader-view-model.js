@@ -4,9 +4,9 @@ const SelectedPageService = require("../shared/selected-page-service");
 
 var book;
 
-function ReaderViewModel(bookName, success, failure) {
+function ReaderViewModel(filename, success, failure) {
     SelectedPageService.getInstance().updateSelectedPage("Reader");
-    getJson(bookName.toLowerCase()+'.json', success, failure);
+    getJson(filename, success, failure);
     var viewModel;
 
 }
@@ -21,7 +21,8 @@ function getJson(filename, success, failure) {
             try {
                 jsonData = JSON.parse(content);
                 viewModel = new observableModule.fromObject(jsonData);
-                return success(viewModel);    
+                return success(viewModel);  
+                  
             } catch (err) {
                 return failure(err); 
             }
