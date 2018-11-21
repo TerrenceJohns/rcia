@@ -1,9 +1,23 @@
 const observableModule = require("tns-core-modules/data/observable");
-
+const Sqlite = require( "nativescript-sqlite" );
 const SelectedPageService = require("../shared/selected-page-service");
 
 function HomeViewModel() {
     SelectedPageService.getInstance().updateSelectedPage("Home");
+    if(!Sqlite.exists("bible.db")) {
+        Sqlite.copyDatabase("bible.db");
+    } else {
+         Sqlite.deleteDatabase("bible.db");
+         Sqlite.copyDatabase("bible.db");
+    }
+    new Sqlite("bible.db",function(err, db){
+        var sql = `CREATE VIEW "vwBook" AS select a.BookID, a.TestamentID, a.Name, a.Abbr, 
+		            max(b.ChapterID) as ChapterCount 
+                    from book a, verse b 
+                    where b.BookID = a.BookID 
+                    Group by a.BookID, a.TestamentID,a.Name,a.Abbr`
+        db.execSQL(sql);
+    });
 
     const viewModel = observableModule.fromObject({
         welcomeMessage1:"Compendium of the",

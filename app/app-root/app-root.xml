@@ -26,10 +26,10 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                         <Label row="0" col="1" text="Compendium Catechism" class="p-r-10" fontSize="18" />
                     </GridLayout>
 
-                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Gospels' ? ' selected': '') }}"
-                        route="gospels/gospels-page" title="Gospels" tap="onNavigationItemTap">
+                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Bible' ? ' selected': '') }}"
+                        route="bible/bible-page" title="Bible" tap="onNavigationItemTap">
                         <Label row="0" col="0" text="&#xf647;" class="fas" fontSize="18" />
-                        <Label row="0" col="1" text="The Gospels" class="p-r-10" fontSize="18" />
+                        <Label row="0" col="1" text="The Bible" class="p-r-10" fontSize="18" />
                     </GridLayout>
 
                    

@@ -1,6 +1,5 @@
 const application = require("tns-core-modules/application");
 const frameModule = require("tns-core-modules/ui/frame");
-
 const AppRootViewModel = require("./app-root-view-model");
 
 function onLoaded(args) {

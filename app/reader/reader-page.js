@@ -1,37 +1,27 @@
 const app = require("tns-core-modules/application");
 const observableModule = require("tns-core-modules/data/observable");
 const view = require("tns-core-modules/ui/core/view");
-const frameModule = require("tns-core-modules/ui/frame");
-const listViewModule = require("tns-core-modules/ui/list-view");
 const ReaderViewModel = require("./reader-view-model");
 var colorModule = require("tns-core-modules/color");
-var selectedHighlight = "highlight1";
+const fs = require("file-system");
+const socialShareModule = require("nativescript-social-share");
+
 
 var page;
+var bookName;
+var chapter;
+var highlights = [];
+var selectedHighlight = "highlight1";
+
 
 function onNavigatingTo(args) {
     page = args.object;
-    var bookName = page.navigationContext.bookName;
-    var filename = page.navigationContext.filename;
-    var chapter = page.navigationContext.chapter;
+    BookID = page.navigationContext.BookID;
+    ChapterID = page.navigationContext.ChapterID;
     var bibleBook = {title:"", verses:[] };
 
-    var bookData = new ReaderViewModel(
-        filename, 
-        function(data){
-            bibleBook.verses = []; 
-            var verses = data.chapters[chapter - 1];
-            var i = 0; 
-            verses.forEach(element=>{
-                bibleBook.verses.push({number:i+1, text:element.replace('&#x27;','\''), scale:1}); 
-                i +=1;   
-            });
-            bibleBook.title = bookName + ' :' + chapter;
-            
-            page.bindingContext = new observableModule.fromObject(bibleBook);
-        }, function(err){
-            console.log(err.message);    
-        });
+    var bookData = new ReaderViewModel(BookID,ChapterID);
+    page.bindingContext = bookData;
     
     
 }
@@ -41,14 +31,58 @@ function onDrawerButtonTap(args) {
     sideDrawer.showDrawer();
 }
 
-function onLongPress(args) {
-    if(args.view.get("class").indexOf('highlight') != -1){
-        args.view.set("class",args.view.get("class").replace('highlight1','').
-            replace('highlight2','').replace('highlight3','').replace('highlight4',''));
-    } else {
-        args.view.set("class",args.view.get("class") + ' ' + selectedHighlight);
+function getIndexOfHighlight(hl){
+    var i = -1;
+    var x = 0;
+    highlights.forEach(elem=>{
+        if(elem.book == hl.book && elem.chapter == hl.chapter && elem.verse == hl.verse ) {
+          i = x;      
+        }
+        x += 1;
+    });
+    return i;
+}
+
+function onDoubleTap(args) {
+    var verse = args.view.bindingContext.VerseNumber;
+    var obVerse = args.view.bindingContext;
+    if(obVerse.verseHighlight != '') {
+        obVerse.verseHighlight = '';
+    }    else {
+        obVerse.verseHighlight = selectedHighlight;
     }
-        
+    
+    var repeater = view.getViewById(page,"rptVerses");
+    repeater.refresh();
+    
+}
+
+ function saveHighlights(filename){
+    var documents = fs.knownFolders.currentApp();
+    var file = documents.getFile('store/' + filename);
+    var highlightString = JSON.stringify(highlights);
+    file.writeText(highlightString)
+        .then((result) => {
+            file.readText()
+                .then((res) => {
+                    console.log("saved");
+                });
+        }).catch((err) => {
+            console.log("Your highlights were not saved");
+        });
+ }       
+function onLongPress(args){
+    var selectedVerses = page.bindingContext.verses.filter(elem=>{
+        return elem.verseHighlight != '';
+    }); 
+    console.log(selectedVerses);
+
+    var shareString = bookName + ' ' + chapter + '\n'; 
+    selectedVerses.forEach(vs=>{
+        shareString = shareString + vs.number + '. ' + vs.text + '\n'; 
+    });
+     
+    socialShareModule.shareText(shareString,"How would you like to share this passage?");
 }
 
 function onPinch(args) {
@@ -69,8 +103,14 @@ function onPinch(args) {
     
 }
 function selectHighlight(args) {
-    selectedHighlight = args.object.get("class");
+    if (selectedHighlight != args.object.get("class")){
+        selectedHighlight = args.object.get("class");
+    } 
+    
+    
 }
+
+exports.onDoubleTap = onDoubleTap; 
 exports.selectHighlight = selectHighlight;
 exports.onPinch = onPinch;
 exports.onLongPress = onLongPress;

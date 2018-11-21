@@ -14,15 +14,23 @@
             <Button text="4" tap="selectHighlight" class="highlight4" />
         </StackLayout>
         <ScrollView pinch="onPinch" >
-        <Repeater id="rptVerses" items="{{ verses }}" >
+            <Repeater id="rptVerses" items="{{ verses }}" longPress="onLongPress"  >
                 <Repeater.itemsLayout>
                     <StackLayout  />
                 </Repeater.itemsLayout>
                 <Repeater.itemTemplate>
-                    <StackLayout class="{{ number % 2 != 0 ? 'list-group-item ':'list-group-item alt' }}" orientation="horizontal" longPress="onLongPress"  >
-                    <Label text="{{ number }}" textWrap="false" class="number m-t-5 m-l-10" verticalAlignment="top" fontSize="{{ 18 * scale}}"   />
-                    <Label text="{{ text }}" textWrap="true" class="text m-l-5 m-r-10 m-t-5"  fontSize="{{ 20 * scale}}" />
-                </StackLayout>
+                    <StackLayout>
+                        <StackLayout orientation="horizontal" class="{{ verseHighlight }}"   doubleTap="onDoubleTap" >
+                            <Label text="{{ VerseNumber }}" textWrap="false" class="number m-t-5 m-l-10" verticalAlignment="top" fontSize="{{ 18 * scale}}" />
+                            <Label text="{{ VerseText }}" textWrap="true" class="text m-l-5 m-r-10 m-t-5"  fontSize="{{ 20 * scale}}" />
+                        </StackLayout>
+                        <StackLayout visibility="{{ verseHighlight == '' ? 'collapsed' : 'visible'}}" width="100%">
+                            <StackLayout class="hr-light"  />
+                                <HtmlView html="Notes" class="m-l-10" ></HtmlView>
+                            <StackLayout class="hr-light"  />
+                        </StackLayout>    
+                    </StackLayout>
+                    
                 </Repeater.itemTemplate>
             </Repeater>
         </ScrollView>
@@ -30,7 +38,4 @@
     
     </StackLayout>
     
-            
-            
-            
 </Page>
