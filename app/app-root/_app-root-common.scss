@@ -39,6 +39,15 @@ $reader-base-font-size:16;
     color:#663300;
     
 }
+.crtitle {
+    color:#663300;
+    font-style: italic;
+}
+.crtext {
+    color:#050783;
+    
+}
+
 .alt {
     background-color: #E6E9F3; 
 
@@ -59,7 +68,9 @@ $reader-base-font-size:16;
 .highlight4 {
     background-color: rgba(243, 122, 192, 0.856);
 }
-
+.crossReferences {
+    background-color: rgb(176, 237, 241); 
+}
 
 .sidedrawer {
     &.sidedrawer-left {

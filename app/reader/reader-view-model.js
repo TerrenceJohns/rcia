@@ -9,10 +9,13 @@ function ReaderViewModel(bookid, chapterid) {
     const viewModel = observableModule.fromObject({
         title:"Douay-Rheims Bible",
         BookID:bookid,
+        crossreferences:[],
         ChapterID:chapterid,
         ChapterNotes:[],
         verses:[],
         highlights:[]
+        
+        
     });
 
     if(Sqlite.exists("bible.db")) {
@@ -31,7 +34,8 @@ function ReaderViewModel(bookid, chapterid) {
                             VerseText:ob.VerseText,
                             scale:1,
                             verseHighlight:'',
-                            verseNote:''
+                            crossreferences:[],
+                            loading:false
                         };
 
                         viewModel.verses.push(vrs);
@@ -45,6 +49,7 @@ function ReaderViewModel(bookid, chapterid) {
                     console.log(err);
                 }
             });
+                           
         });    
     }
 

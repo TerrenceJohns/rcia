@@ -40,18 +40,16 @@ function onItemTap(args) {
     fl = false;
     var i = args.index;
     var books = testamentID==1 ? page.bindingContext.otbooks : page.bindingContext.ntbooks;
-    console.log(books[i]);
     if (books[i].visible == "visible") {
-        books[i].visible = "collapse";
+        books[i].visible = "collapsed";
     } else {
-        //collapseAll();
-        
+        collapseAll(testamentID);
         if(books[i].chapters.length == 0 ) {
             for (z = 1; z < books[i].ChapterCount + 1; z++) { 
                 books[i].chapters.push(z);
             } 
         }
-        console.log(books[i]);
+        
         books[i].visible = "visible";
         selectedBook = books[i].Name;
         BookID = books[i].BookID;
@@ -64,9 +62,9 @@ function onItemTap(args) {
 
 }
 
-function collapseAll() {
-    var lst = page.bindingContext.books;
-    lst.forEach(el => {
+function collapseAll(testamentID) {
+    var books = testamentID==1 ? page.bindingContext.otbooks : page.bindingContext.ntbooks;
+    books.forEach(el => {
         el.visible = "collapsed";
     });
 }

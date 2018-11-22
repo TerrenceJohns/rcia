@@ -4,18 +4,16 @@ const SelectedPageService = require("../shared/selected-page-service");
 
 function HomeViewModel() {
     SelectedPageService.getInstance().updateSelectedPage("Home");
+    Sqlite.copyDatabase("bible.db");
     if(!Sqlite.exists("bible.db")) {
         Sqlite.copyDatabase("bible.db");
-    } else {
-         Sqlite.deleteDatabase("bible.db");
-         Sqlite.copyDatabase("bible.db");
-    }
+    } 
     new Sqlite("bible.db",function(err, db){
-        var sql = `CREATE VIEW "vwBook" AS select a.BookID, a.TestamentID, a.Name, a.Abbr, 
-		            max(b.ChapterID) as ChapterCount 
-                    from book a, verse b 
-                    where b.BookID = a.BookID 
-                    Group by a.BookID, a.TestamentID,a.Name,a.Abbr`
+        var sql = `CREATE INDEX indx_CrossReference ON CrossReference (
+            SourceBookID,
+            SourceChapterID,
+            SourceVerseNumber
+        );`
         db.execSQL(sql);
     });
 

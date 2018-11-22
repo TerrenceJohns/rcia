@@ -14,19 +14,36 @@
             <Button text="4" tap="selectHighlight" class="highlight4" />
         </StackLayout>
         <ScrollView pinch="onPinch" >
-            <Repeater id="rptVerses" items="{{ verses }}" longPress="onLongPress"  >
+            <Repeater id="rptVerses" items="{{ verses }}" onSwipe="verseSwiped"  >
                 <Repeater.itemsLayout>
                     <StackLayout  />
                 </Repeater.itemsLayout>
                 <Repeater.itemTemplate>
-                    <StackLayout>
-                        <StackLayout orientation="horizontal" class="{{ verseHighlight }}"   doubleTap="onDoubleTap" >
+                    <StackLayout id="{{ 'SL_' + VerseNumber }}">
+                        <StackLayout orientation="horizontal" class="{{ verseHighlight }}"   doubleTap="onDoubleTap" longPress="onLongPress" >
                             <Label text="{{ VerseNumber }}" textWrap="false" class="number m-t-5 m-l-10" verticalAlignment="top" fontSize="{{ 18 * scale}}" />
                             <Label text="{{ VerseText }}" textWrap="true" class="text m-l-5 m-r-10 m-t-5"  fontSize="{{ 20 * scale}}" />
+                        <ActivityIndicator id="{{ 'AI_' + VerseNumber }}" />
                         </StackLayout>
-                        <StackLayout visibility="{{ verseHighlight == '' ? 'collapsed' : 'visible'}}" width="100%">
+                        <StackLayout visibility="visible" width="100%" >
                             <StackLayout class="hr-light"  />
-                                <HtmlView html="Notes" class="m-l-10" ></HtmlView>
+                                <Repeater id="{{'rptCrossRefs_' + VerseNumber }}" items="{{ crossreferences }}">
+                                    <Repeater.itemsLayout>
+                                        <StackLayout  />
+                                    </Repeater.itemsLayout>
+                                        
+                                    <Repeater.itemTemplate>
+                                        <StackLayout  >
+                                            <Label class="crtitle m-t-5 m-l-20" fontSize="{{ 18 * scale}}" >
+                                                <FormattedString>
+                                                    <Span text="{{ Name  + ' ' + TargetChapterID + ': ' + TargetVerseNumber }}" fontAttributes="Italic" ></Span>
+                                                </FormattedString>
+                                            </Label>
+                                             
+                                            <Label text="{{ VerseText }}" textWrap="true" class="crtext m-l-25 m-r-10 m-t-5"  fontSize="{{ 18 * scale}}" fontAttributes="Italic" />
+                                        </StackLayout>
+                                    </Repeater.itemTemplate>
+                                </Repeater>
                             <StackLayout class="hr-light"  />
                         </StackLayout>    
                     </StackLayout>
