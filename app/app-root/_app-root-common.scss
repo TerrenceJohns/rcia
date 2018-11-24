@@ -48,6 +48,8 @@ $reader-base-font-size:16;
     
 }
 
+.verse { color: rgb(21, 0, 78);}
+
 .alt {
     background-color: #E6E9F3; 
 
@@ -56,21 +58,19 @@ $reader-base-font-size:16;
     background-color: rgb(11, 12, 11);
 }
 .highlight1 {
-    background-color: rgb(95, 238, 114);
+    background-color: rgb(190, 243, 197);
 }
 
 .highlight2 {
-    background-color: rgb(250, 242, 129);
+    background-color: rgb(250, 246, 198);
 }
 .highlight3 {
-    background-color: rgba(215, 201, 241, 0.856);
+    background-color: rgba(242, 237, 252, 0.856);
 }
 .highlight4 {
-    background-color: rgba(243, 122, 192, 0.856);
+    background-color: rgba(250, 185, 223, 0.856);
 }
-.crossReferences {
-    background-color: rgb(176, 237, 241); 
-}
+
 
 .sidedrawer {
     &.sidedrawer-left {

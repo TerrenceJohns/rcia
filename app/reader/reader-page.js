@@ -2,14 +2,13 @@ const app = require("tns-core-modules/application");
 const observableModule = require("tns-core-modules/data/observable");
 const view = require("tns-core-modules/ui/core/view");
 const ReaderViewModel = require("./reader-view-model");
-var colorModule = require("tns-core-modules/color");
-const fs = require("file-system");
 const socialShareModule = require("nativescript-social-share");
 var gestures = require("tns-core-modules/ui/gestures");
 const Sqlite = require( "nativescript-sqlite" );
-const ActivityIndicator = require("tns-core-modules/ui/activity-indicator").ActivityIndicator;
+var Toast = require("nativescript-toast");
 
 
+var showedHelp = false;
 var page;
 var bookName;
 var chapter;
@@ -22,18 +21,32 @@ function onNavigatingTo(args) {
     BookID = page.navigationContext.BookID;
     ChapterID = page.navigationContext.ChapterID;
     var bibleBook = {title:"", verses:[] };
-
     var bookData = new ReaderViewModel(BookID,ChapterID);
     bookData.verses.forEach(verse =>{
         var vn = verse.VerseNumber;
         verse.crossreferences = bookData.crossreferences.filter(cr => cr.SourceVerseNumber == vn);
-        console.dir(verse.crossreferences);
     });
-   console.dir(bookData.verses);   
+         
     page.bindingContext = bookData;
+    if (!showedHelp){
+        const alertOptions = {
+            title: "INFO",
+            message: "'PRESS' verse: long press to view cross references",
+            okButtonText: "Got it",
+            cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
+        };
+        alert(alertOptions).then(() => {
+            showedHelp = true;
+        });
     
-    
+    }
+        // var toast = Toast.makeText("TAP verse to highlight\n PRESS verse (2 sec) to view cross references", "long");
+    // toast.show();
 }
+
+function navigatedTo(args) {
+    
+} 
 
 function onDrawerButtonTap(args) {
     const sideDrawer = app.getRootView();
@@ -52,53 +65,31 @@ function getIndexOfHighlight(hl){
     return i;
 }
 
-function onDoubleTap(args) {
-    var verse = args.view.bindingContext.VerseNumber;
-    var obVerse = args.view.bindingContext;
-    if(obVerse.verseHighlight != '') {
-        obVerse.verseHighlight = '';
-    }    else {
-        obVerse.verseHighlight = selectedHighlight;
+ 
+ function onItemTap(args){
+    if(args.view.bindingContext.verseHighlight==''){
+        args.view.bindingContext.verseHighlight = selectedHighlight;
+    } else {
+        args.view.bindingContext.verseHighlight='';
     }
-    
     var repeater = view.getViewById(page,"rptVerses");
-    repeater.refresh();
+    repeater.refresh(); 
     
-}
-
- function saveHighlights(filename){
-    var documents = fs.knownFolders.currentApp();
-    var file = documents.getFile('store/' + filename);
-    var highlightString = JSON.stringify(highlights);
-    file.writeText(highlightString)
-        .then((result) => {
-            file.readText()
-                .then((res) => {
-                    var a = 'saved';
-                });
-        }).catch((err) => {
-            console.log("Your highlights were not saved");
-        });
- }       
+} 
 function onLongPress(args){
     var vs = args.view.bindingContext;
     if (vs.crossreferences.length == 0 ) {
-    getRefs(vs.BookID, vs.ChapterID, vs.VerseNumber, 
-        function(data){
-            vs.crossreferences = data;
-            view.getViewById(page,"rptVerses").refresh();
-        }, 
-        function(err){
-            console.log(err);   
-        });
-    } else {
-        vs.crossreferences = [];
-        view.getViewById(page,"rptVerses").refresh();
+        getRefs(vs.BookID, vs.ChapterID, vs.VerseNumber, 
+            function(data){
+                vs.crossreferences = data;
+                //view.getViewById(page,"rptVerses").refresh();
+            }, 
+            function(err){
+                console.log(err);   
+            });
     }
-
-
-
-    
+    args.view.bindingContext.showCrossRefs = !args.view.bindingContext.showCrossRefs;
+    view.getViewById(page,"rptVerses").refresh(); 
 }
 
 function onPinch(args) {
@@ -122,8 +113,6 @@ function selectHighlight(args) {
     if (selectedHighlight != args.object.get("class")){
         selectedHighlight = args.object.get("class");
     } 
-    
-    
 }
 
 
@@ -140,7 +129,7 @@ function getRefs(bookid, chapterid, versenumber, success, failure) {
                 "a.TargetBookID = c.BookID and " + 
                  "a.SourceBookID = "+ bookid + " and " +
                 "a.SourceChapterID = " + chapterid + " and " + "a.SourceVerseNumber = " + versenumber + " " + 
-            "Order by a.Vote DESC limit 5";
+            "Order by a.Vote DESC limit 3";
             
             var result = [];
             db.resultType(Sqlite.RESULTSASOBJECT);     
@@ -170,8 +159,10 @@ function verseSwiped(args) {
      
     socialShareModule.shareText(shareString,"How would you like to share this passage?");
 }
+
+exports.navigatedTo = navigatedTo;
 exports.verseSwiped = verseSwiped;
-exports.onDoubleTap = onDoubleTap; 
+exports.onItemTap = onItemTap; 
 exports.selectHighlight = selectHighlight;
 exports.onPinch = onPinch;
 exports.onLongPress = onLongPress;

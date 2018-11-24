@@ -77,7 +77,7 @@
                 </StackLayout>
             </ListView.itemTemplate>
         </ListView>
-        
+       
     </StackLayout>
 
     </TabViewItem>

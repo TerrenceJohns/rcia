@@ -13,7 +13,8 @@ function ReaderViewModel(bookid, chapterid) {
         ChapterID:chapterid,
         ChapterNotes:[],
         verses:[],
-        highlights:[]
+        highlights:[],
+        isloading:false
         
         
     });
@@ -35,7 +36,7 @@ function ReaderViewModel(bookid, chapterid) {
                             scale:1,
                             verseHighlight:'',
                             crossreferences:[],
-                            loading:false
+                            showCrossRefs:false
                         };
 
                         viewModel.verses.push(vrs);

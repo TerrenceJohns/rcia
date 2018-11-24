@@ -16,13 +16,10 @@ var BookID = 0;
 
 function onNavigatingTo(args) {
     page = args.object;
-    const indicator = page.getViewById("myIndicator");
-    indicator.busy = true;
-    
+        
     if(!page.bindingContext){
         var bc  = new BibleViewModel();
         bc.scale = 1;
-        bc.isLoading = false;
         page.bindingContext = bc;
         
     } 
@@ -86,8 +83,9 @@ function onChapterTap(args) {
     args.view.animate({
         backgroundColor: new colorModule.Color("#7FB3D5"),
         opacity: 20,
-        duration: 500
+        duration: 100
     });
+    
     navigate(BookID,index);
 
 }

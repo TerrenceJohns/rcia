@@ -1,46 +1,42 @@
 <Page 
     xmlns="http://www.nativescript.org/tns.xsd"  
-    navigatingTo="onNavigatingTo">
+    navigatingTo="onNavigatingTo" navigatedTo="navigatedTo">
     
     <ActionBar class="action-bar" title="{{ title}}" >
         <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
         
     </ActionBar>
     <StackLayout orientation="vertical" >
-        <StackLayout orientation="horizontal" class="highlightButtonBar" >
-            <Button text="1" tap="selectHighlight" class="highlight1" />
-            <Button text="2" tap="selectHighlight" class="highlight2" />
-            <Button text="3" tap="selectHighlight" class="highlight3" />
-            <Button text="4" tap="selectHighlight" class="highlight4" />
-        </StackLayout>
         <ScrollView pinch="onPinch" >
+             
             <Repeater id="rptVerses" items="{{ verses }}" onSwipe="verseSwiped"  >
                 <Repeater.itemsLayout>
                     <StackLayout  />
                 </Repeater.itemsLayout>
-                <Repeater.itemTemplate>
-                    <StackLayout id="{{ 'SL_' + VerseNumber }}">
-                        <StackLayout orientation="horizontal" class="{{ verseHighlight }}"   doubleTap="onDoubleTap" longPress="onLongPress" >
-                            <Label text="{{ VerseNumber }}" textWrap="false" class="number m-t-5 m-l-10" verticalAlignment="top" fontSize="{{ 18 * scale}}" />
-                            <Label text="{{ VerseText }}" textWrap="true" class="text m-l-5 m-r-10 m-t-5"  fontSize="{{ 20 * scale}}" />
-                        <ActivityIndicator id="{{ 'AI_' + VerseNumber }}" />
+                <Repeater.itemTemplate >
+                    <StackLayout  class="{{ VerseNumber%2==0 ? 'alt ' + verseHighlight: verseHighlight }}" >
+                        <StackLayout orientation="horizontal"      >
+                            <Label text="{{ VerseNumber }}" textWrap="false" class="number m-t-5 m-l-10" verticalAlignment="top" fontSize="{{ 20 * scale}}"  />
+                            <Label text="{{ VerseText }}" textWrap="true" class="verse m-l-5 m-r-10 m-t-5"  fontSize="{{ 22 * scale}}" longPress="onLongPress"   />
+                        
                         </StackLayout>
                         <StackLayout visibility="visible" width="100%" >
-                            <StackLayout class="hr-light"  />
-                                <Repeater id="{{'rptCrossRefs_' + VerseNumber }}" items="{{ crossreferences }}">
+                            
+                                <Repeater items="{{ crossreferences }}" visibility="{{ showCrossRefs ? 'visible': 'collapsed'}}">
                                     <Repeater.itemsLayout>
                                         <StackLayout  />
                                     </Repeater.itemsLayout>
                                         
                                     <Repeater.itemTemplate>
                                         <StackLayout  >
-                                            <Label class="crtitle m-t-5 m-l-20" fontSize="{{ 18 * scale}}" >
+                                            <Label class="crtitle m-t-5 m-l-20" fontSize="{{ 20 * scale}}" >
                                                 <FormattedString>
                                                     <Span text="{{ Name  + ' ' + TargetChapterID + ': ' + TargetVerseNumber }}" fontAttributes="Italic" ></Span>
                                                 </FormattedString>
                                             </Label>
                                              
-                                            <Label text="{{ VerseText }}" textWrap="true" class="crtext m-l-25 m-r-10 m-t-5"  fontSize="{{ 18 * scale}}" fontAttributes="Italic" />
+                                            <Label text="{{ VerseText }}" textWrap="true" class="crtext m-l-25 m-r-10 m-t-5"  fontSize="{{ 20 * scale}}" fontAttributes="Italic" />
+                                            
                                         </StackLayout>
                                     </Repeater.itemTemplate>
                                 </Repeater>
@@ -50,9 +46,10 @@
                     
                 </Repeater.itemTemplate>
             </Repeater>
+           
         </ScrollView>
         
-    
+
     </StackLayout>
     
 </Page>
