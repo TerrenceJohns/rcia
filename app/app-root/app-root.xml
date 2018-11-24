@@ -18,36 +18,33 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
 
             <ScrollView row="1">
                 <StackLayout class="sidedrawer-content">
-                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Home' ? ' selected': '') }}"
+                    
+                    <StackLayout class="hr-light"></StackLayout>
+                     <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Home' ? ' selected': '') }}"
                         route="home/home-page" title="Home" tap="onNavigationItemTap">
-                        <Label row="0" col="0" text="&#xf015;" class="fa"  />
-                        <Label row="0" col="1" text="Contents" class="p-r-10" />
+                        <Label row="0" col="0" text="&#xf02d;" class="fas" fontSize="18"  />
+                        <Label row="0" col="1" text="Home" class="p-r-10" fontSize="18" />
+                    </GridLayout>
+                    <Label text="RESOURCES" textWrap="False" textBold="True" class="p-10" fontSize="18" />
+                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Compendium' ? ' selected': '') }}"
+                        route="compendium/compendium-page" title="Comependium" tap="onNavigationItemTap">
+                        <Label row="0" col="0" text="&#xf02d;" class="fas" fontSize="18"  />
+                        <Label row="0" col="1" text="Compendium Catechism" class="p-r-10" fontSize="18" />
                     </GridLayout>
 
-                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Cccc' ? ' selected': '') }}"
-                        route="cccc/cccc-page" title="Cccc" tap="onNavigationItemTap">
-                        <Label row="0" col="0" text="&#xf02d;" class="fa" />
-                        <Label row="0" col="1" text="Compendium Catechism" class="p-r-10" />
+                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Bible' ? ' selected': '') }}"
+                        route="bible/bible-page" title="Bible" tap="onNavigationItemTap">
+                        <Label row="0" col="0" text="&#xf647;" class="fas" fontSize="18" />
+                        <Label row="0" col="1" text="The Bible" class="p-r-10" fontSize="18" />
                     </GridLayout>
-
-                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Lists' ? ' selected': '') }}"
-                        route="lists/lists-page" title="Lists" tap="onNavigationItemTap">
-                        <Label row="0" col="0" text="&#xf03a;" class="fa" />
-                        <Label row="0" col="1" text="Formulas of Catholic Doctrine" class="p-r-10" />
-                    </GridLayout>
-
-                    <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Prayers' ? ' selected': '') }}"
-                        route="prayers/prayers-page" title="Prayers" tap="onNavigationItemTap">
-                        <Label row="0" col="0" text="&#xf067;" class="fa" />
-                        <Label row="0" col="1" text="Common Prayers" class="p-r-10" />
-                    </GridLayout>
+                    <StackLayout class="hr-light"></StackLayout>
 
                     <StackLayout class="hr-light"></StackLayout>
 
                     <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'About' ? ' selected': '') }}"
                         route="about/about-page" title="About" tap="onNavigationItemTap">
-                        <Label row="0" col="0" text="&#xf013;" class="fa" />
-                        <Label row="0" col="1" text="About" class="p-r-10" />
+                        <Label row="0" col="0" text="&#xf05a;" class="fas" fontSize="18" />
+                        <Label row="0" col="1" text="About" class="p-r-10" fontSize="18" />
                     </GridLayout>
                 </StackLayout>
             </ScrollView>

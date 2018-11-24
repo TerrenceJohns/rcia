@@ -9,15 +9,68 @@ $sidedrawer-list-item-offset-left: 15;
 $sidedrawer-list-icon-offset: 10;
 $sidedrawer-list-icon-size: 25;
 $sidedrawer-list-item-font-size: 16;
+$reader-base-font-size:16;
+
 .title {
     color:navy;
-    font-size:16
+    
+}
+.collapsed {
+    visibility: collapse;
+}
+.show {
+    visibility: visible;
+}
+.fas {
+    font-family: Font Awesome 5 Free, fa-solid-900;
+    font-weight: 900;
+    width: $sidedrawer-list-icon-size;
+    margin-right: $sidedrawer-list-icon-offset;
+    font-size:25;
+    color:blue; 
 }
 
 .pre {
     color:#663300;
-    font-size:16
+    
 }
+
+.number {
+    color:#663300;
+    
+}
+.crtitle {
+    color:#663300;
+    font-style: italic;
+}
+.crtext {
+    color:#050783;
+    
+}
+
+.verse { color: rgb(21, 0, 78);}
+
+.alt {
+    background-color: #E6E9F3; 
+
+}
+.highlightButtonBar {
+    background-color: rgb(11, 12, 11);
+}
+.highlight1 {
+    background-color: rgb(190, 243, 197);
+}
+
+.highlight2 {
+    background-color: rgb(250, 246, 198);
+}
+.highlight3 {
+    background-color: rgba(242, 237, 252, 0.856);
+}
+.highlight4 {
+    background-color: rgba(250, 185, 223, 0.856);
+}
+
 
 .sidedrawer {
     &.sidedrawer-left {
@@ -68,6 +121,33 @@ $sidedrawer-list-item-font-size: 16;
             color:blue;
         }
 
+        .far {
+            font-family: Font Awesome 5 Free, fa-regular-400;
+            font-weight: 400; 
+            width: $sidedrawer-list-icon-size;
+            margin-right: $sidedrawer-list-icon-offset;
+            font-size:25;
+            color:blue;
+        }
+        
+        .fab {
+            font-family: Font Awesome 5 Brands, fa-brands-400;
+            font-weight: 400; 
+            width: $sidedrawer-list-icon-size;
+            margin-right: $sidedrawer-list-icon-offset;
+            font-size:25;
+            color:blue;
+        }
+        
+        .fas {
+            font-family: Font Awesome 5 Free, fa-solid-900;
+            font-weight: 900;
+            width: $sidedrawer-list-icon-size;
+            margin-right: $sidedrawer-list-icon-offset;
+            font-size:25;
+            color:blue; 
+        }
+
         &.selected {
             background-color: $item-active-background;
 
@@ -77,3 +157,5 @@ $sidedrawer-list-item-font-size: 16;
         }
     }
 }
+
+

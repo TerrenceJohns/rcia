@@ -200,13 +200,16 @@ module.exports = env => {
                 from: `${appResourcesFullPath}/${appResourcesPlatformDir}`,
                 to: `${dist}/App_Resources/${appResourcesPlatformDir}`,
                 context: projectRoot
-              },
+              }
+
             ]),
             // Copy assets to out dir. Add your own globs as needed.
             new CopyWebpackPlugin([
                 { from: "fonts/**" },
+                { from: "vatican/**" },
                 { from: "**/*.jpg" },
                 { from: "**/*.png" },
+                { from: "**/*.db" }
             ], { ignore: [`${relative(appPath, appResourcesFullPath)}/**`] }),
             // Generate a bundle starter script and activate it in package.json
             new nsWebpack.GenerateBundleStarterPlugin([

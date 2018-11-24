@@ -7,12 +7,12 @@
         <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
         <ActionItem tap="onTopTap"
             ios.position="left">
-            <Label text="&#xf0a6;" class="fa"  />
+            <Label text="&#xf0a6;" class="fas"  />
         </ActionItem>
     </ActionBar>
 
     <StackLayout class="page-content">
-        <WebView id="webview" src="{{ccc}}" loaded="onWebViewLoaded" />
+        <WebView id="webview" src="{{ccc}}" loaded="onWebViewLoaded" class="p-l-10 p-r-10" />
         <ActivityIndicator busy="{{ isLoading }}" />
     </StackLayout>
 </Page>

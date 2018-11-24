@@ -1,0 +1,55 @@
+<Page 
+    xmlns="http://www.nativescript.org/tns.xsd"  
+    navigatingTo="onNavigatingTo" navigatedTo="navigatedTo">
+    
+    <ActionBar class="action-bar" title="{{ title}}" >
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
+        
+    </ActionBar>
+    <StackLayout orientation="vertical" >
+        <ScrollView pinch="onPinch" >
+             
+            <Repeater id="rptVerses" items="{{ verses }}" onSwipe="verseSwiped"  >
+                <Repeater.itemsLayout>
+                    <StackLayout  />
+                </Repeater.itemsLayout>
+                <Repeater.itemTemplate >
+                    <StackLayout  class="{{ VerseNumber%2==0 ? 'alt ' + verseHighlight: verseHighlight }}" >
+                        <StackLayout orientation="horizontal"      >
+                            <Label text="{{ VerseNumber }}" textWrap="false" class="number m-t-5 m-l-10" verticalAlignment="top" fontSize="{{ 20 * scale}}"  />
+                            <Label text="{{ VerseText }}" textWrap="true" class="verse m-l-5 m-r-10 m-t-5"  fontSize="{{ 22 * scale}}" longPress="onLongPress"   />
+                        
+                        </StackLayout>
+                        <StackLayout visibility="visible" width="100%" >
+                            
+                                <Repeater items="{{ crossreferences }}" visibility="{{ showCrossRefs ? 'visible': 'collapsed'}}">
+                                    <Repeater.itemsLayout>
+                                        <StackLayout  />
+                                    </Repeater.itemsLayout>
+                                        
+                                    <Repeater.itemTemplate>
+                                        <StackLayout  >
+                                            <Label class="crtitle m-t-5 m-l-20" fontSize="{{ 20 * scale}}" >
+                                                <FormattedString>
+                                                    <Span text="{{ Name  + ' ' + TargetChapterID + ': ' + TargetVerseNumber }}" fontAttributes="Italic" ></Span>
+                                                </FormattedString>
+                                            </Label>
+                                             
+                                            <Label text="{{ VerseText }}" textWrap="true" class="crtext m-l-25 m-r-10 m-t-5"  fontSize="{{ 20 * scale}}" fontAttributes="Italic" />
+                                            
+                                        </StackLayout>
+                                    </Repeater.itemTemplate>
+                                </Repeater>
+                            <StackLayout class="hr-light"  />
+                        </StackLayout>    
+                    </StackLayout>
+                    
+                </Repeater.itemTemplate>
+            </Repeater>
+           
+        </ScrollView>
+        
+
+    </StackLayout>
+    
+</Page>
