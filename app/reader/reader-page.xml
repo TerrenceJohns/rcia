@@ -14,7 +14,7 @@
                     <StackLayout  />
                 </Repeater.itemsLayout>
                 <Repeater.itemTemplate >
-                    <StackLayout  class="{{ VerseNumber%2==0 ? 'alt ' + verseHighlight: verseHighlight }}" >
+                    <StackLayout  class="{{ VerseNumber%2==0 ? 'alt ' + verseHighlight: verseHighlight }}" tap="onItemTap" >
                         <StackLayout orientation="horizontal"      >
                             <Label text="{{ VerseNumber }}" textWrap="false" class="number m-t-5 m-l-10" verticalAlignment="top" fontSize="{{ 20 * scale}}"  />
                             <Label text="{{ VerseText }}" textWrap="true" class="verse m-l-5 m-r-10 m-t-5"  fontSize="{{ 22 * scale}}" longPress="onLongPress"   />
