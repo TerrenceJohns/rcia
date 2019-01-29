@@ -1,11 +1,11 @@
 {
   "nativescript": {
     "id": "co.za.terrencejohnsit.RciaApp",
-    "tns-android": {
-      "version": "5.0.0"
-    },
     "tns-ios": {
       "version": "5.0.0"
+    },
+    "tns-android": {
+      "version": "5.1.0"
     }
   },
   "description": "Reader for Compendium of the Catechism of the Catholic Church",
@@ -15,6 +15,7 @@
     "lint": "eslint \"app/**/*.js\""
   },
   "dependencies": {
+    "natives": "^1.1.6",
     "nativescript-social-share": "^1.5.1",
     "nativescript-sqlite": "^2.2.3",
     "nativescript-theme-core": "~1.0.4",
@@ -22,7 +23,7 @@
     "nativescript-ui-sidedrawer": "~5.0.0",
     "nativescript-xml2js": "^0.5.2",
     "rxjs": "~6.2.0",
-    "tns-core-modules": "~5.0.0"
+    "tns-core-modules": "^5.1.0"
   },
   "devDependencies": {
     "eslint": "~5.8.0",

@@ -18,6 +18,7 @@ var selectedHighlight = "highlight1";
 
 function onNavigatingTo(args) {
     page = args.object;
+    console.log(page.navigationContext);
     BookID = page.navigationContext.BookID;
     ChapterID = page.navigationContext.ChapterID;
     var bibleBook = {title:"", verses:[] };
@@ -174,6 +175,11 @@ function verseSwiped(args) {
     
 }
 
+function goBack(args) {
+    page.frame.goBack();
+}
+
+exports.goBack = goBack;
 exports.navigatedTo = navigatedTo;
 exports.verseSwiped = verseSwiped;
 exports.onItemTap = onItemTap; 

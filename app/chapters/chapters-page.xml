@@ -1,0 +1,31 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    
+    <ActionBar class="action-bar"  >
+       <StackLayout orientation="horizontal" class="action-bar" width="100%">
+           <Label row="0" tap="goBack" text="&#xf0a8;" color="white" class="fas p-t-5" fontSize="22" width="10%"  />
+           <Label text="{{ title }}" textWrap="true" fontSize="20" class="action-bar b" width="75%" />
+           <Label row="0" tap="showInfo" text="{{ show=='collapsed' ? '&#xf05a;':'&#xf057;' }}" color="white" class="fas p-t-5 p-r-5" fontSize="22" width="15%"  />
+       </StackLayout>
+    </ActionBar>
+
+    <StackLayout class="page-content" class="p-l-10 p-r-10 p-t-15">
+        
+        <Label text="{{ note }}" textWrap="true" class="note" visibility="{{ show }}" />
+       
+            
+        <ScrollView >
+            
+            <Repeater items="{{ chapters }}"  >
+            <Repeater.itemsLayout>
+                <WrapLayout width="100%" />
+            </Repeater.itemsLayout>
+            <Repeater.itemTemplate>
+                <Button text="{{ chapter }}" tap="onChapterTap" width="25%" fontSize="20"   />
+            </Repeater.itemTemplate>
+        </Repeater>    
+        </ScrollView>
+        
+    </StackLayout>
+
+
+</Page>

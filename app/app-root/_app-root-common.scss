@@ -30,6 +30,27 @@ $reader-base-font-size:16;
     color:blue; 
 }
 
+.note{
+    font-size:18;
+    background-color: #E6E9F3; 
+    padding:10;
+    border-style: solid;
+    border-color: #050783;
+    border-width: 1;
+    border-radius: 5 
+}
+
+.crnote{
+    margin:10;
+    font-size:18;
+    background-color: #E6E9F3; 
+    padding:8;
+    border-style: solid;
+    border-color: #050783;
+    border-width: 1;
+    border-radius: 3 
+}
+
 .pre {
     color:#663300;
     
@@ -69,6 +90,37 @@ $reader-base-font-size:16;
 }
 .highlight4 {
     background-color: rgba(250, 185, 223, 0.856);
+}
+
+.category {
+    color: #220fca;
+}
+
+.bookNote {
+    color:#050783;
+    font-size: 20;
+    
+}
+.category5 {
+    background-color: #ccddff;
+}
+.category3 {
+    background-color: #b3ccff;
+}
+.category4 {
+    background-color: #99bbff;
+}
+.category2 {
+    background-color: #80aaff;
+}
+.category6 {
+    background-color: #f7cbef;
+}
+.category7 {
+    background-color: #d28af3;
+}
+.category8 {
+    background-color:#e4baf8;
 }
 
 

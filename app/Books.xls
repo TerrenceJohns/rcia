@@ -1,0 +1,606 @@
+<?xml version="1.0"?>
+<ss:Workbook xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
+<ss:Styles><ss:Style ss:ID="1"><ss:Font ss:Bold="1"/></ss:Style></ss:Styles>
+<ss:Worksheet ss:Name="Sqliteman Export">
+<ss:Table>
+<ss:Column ss:Width="100"/>
+<ss:Column ss:Width="100"/>
+<ss:Column ss:Width="100"/>
+<ss:Column ss:Width="100"/>
+<ss:Column ss:Width="100"/>
+<ss:Column ss:Width="100"/>
+<ss:Row ss:StyleID="1">
+<ss:Cell><ss:Data ss:Type="String">BookID</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">TestamentID</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">CategoryID</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">SortOrderID</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Name</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Abbr</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Genesis</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Gn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Exodus</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Ex</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">3</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">3</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Leviticus</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Lv</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">4</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">4</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Numbers</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nm</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">5</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">5</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Deuteronomy</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Dt</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">6</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">6</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Joshua</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Jos</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Judges</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Jgs</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">8</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">8</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Ruth</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Ru</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">9</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">9</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1 Samuel</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1Sm</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">10</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">10</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2 Samuel</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2Sm</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">11</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">11</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1 Kings</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1Kgs</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">12</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">12</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2 Kings</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2Kgs</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">13</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">13</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1 Chronicles</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1Chr</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">14</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">14</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2 Chronicles</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2Chr</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">15</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">15</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Ezra</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Ezr</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">16</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">16</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nehemiah</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Neh</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">67</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">17</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Tobit</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Tb</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">68</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">18</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Judith</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Jdt</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">17</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">19</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Esther</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Est</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">69</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">20</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1 Maccabees</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1Mc</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">70</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">21</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2 Maccabees</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2 Mc</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">18</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">3</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">22</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Job</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Jb</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">19</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">3</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">23</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Psalm</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Ps</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">20</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">3</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">24</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Proverbs</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Prv</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">21</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">3</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">25</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Ecclesiastes</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Eccl</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">22</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">3</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">26</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Song of Solomon</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Sg</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">71</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">3</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">27</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Wisdom</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Wis</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">72</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">3</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">28</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Sirach</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Sir</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">23</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">4</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">29</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Isaiah</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Is</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">24</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">4</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">30</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Jeremiah</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Jer</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">25</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">4</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">31</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Lamentations</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Lam</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">73</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">4</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">32</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Baruch</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Bar</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">26</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">4</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">33</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Ezekiel</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Ez</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">27</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">4</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">34</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Daniel</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Dn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">28</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">5</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">35</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hosea</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hos</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">29</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">5</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">36</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Joel</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Jl</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">30</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">5</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">37</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Amos</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Am</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">31</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">5</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">38</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Obadiah</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Ob</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">32</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">5</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">39</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Jonah</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Jon</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">33</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">5</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">40</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Micah</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Mi</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">34</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">5</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">41</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nahum</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Na</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">35</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">5</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">42</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Habakkuk</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hb</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">36</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">5</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">43</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Zephaniah</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Zep</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">37</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">5</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">44</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Haggai</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hg</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">38</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">5</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">45</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Zechariah</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Zec</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">39</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">5</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">46</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Malachi</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Mal</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">40</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">6</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">47</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Matthew</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Mt</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">41</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">6</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">48</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Mark</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Mk</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">42</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">6</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">49</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Luke</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Lk</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">43</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">6</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">50</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">John</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Jn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">44</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">6</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">51</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Acts</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Acts</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">45</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">52</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Romans</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Rom</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">46</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">53</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1 Corinthians</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1Cor</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">47</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">54</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2 Corinthians</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2Cor</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">48</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">55</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Galatians</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Gal</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">49</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">56</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Ephesians</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Eph</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">50</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">57</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Philippians</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Phil</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">51</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">58</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Colossians</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Col</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">52</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">59</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1 Thessalonians</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1Thes</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">53</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">60</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2 Thessalonians</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2Thes</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">54</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">61</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1 Timothy</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1Tm</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">55</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">62</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2 Timothy</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2Tm</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">56</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">63</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Titus</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Ti</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">57</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">64</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Philemon</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Phlm</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">58</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">7</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">65</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hebrews</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Heb</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">59</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">8</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">66</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">James</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Jas</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">60</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">8</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">67</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1 Peter</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1Pt</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">61</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">8</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">68</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2 Peter</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2Pt</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">62</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">8</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">69</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1 John</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">1Jn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">63</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">8</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">70</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2 John</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2Jn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">64</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">8</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">71</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">3 John</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">3Jn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">65</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">8</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">72</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Jude</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Jude</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">66</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">2</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">8</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">73</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Revelation</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Rev</ss:Data></ss:Cell>
+</ss:Row>
+</ss:Table>
+</ss:Worksheet>
+</ss:Workbook>
