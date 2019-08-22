@@ -22,7 +22,7 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                     <StackLayout class="hr-light"></StackLayout>
                      <GridLayout columns="auto, *" class="{{ 'sidedrawer-list-item' + (selectedPage === 'Home' ? ' selected': '') }}"
                         route="home/home-page" title="Home" tap="onNavigationItemTap">
-                        <Label row="0" col="0" text="&#xf02d;" class="fas" fontSize="18"  />
+                        <Label row="0" col="0" text="&#xf51d;" class="fas" fontSize="18"  />
                         <Label row="0" col="1" text="Home" class="p-r-10" fontSize="18" />
                     </GridLayout>
                     <Label text="RESOURCES" textWrap="False" textBold="True" class="p-10" fontSize="18" />

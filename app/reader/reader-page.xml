@@ -3,8 +3,11 @@
     navigatingTo="onNavigatingTo" navigatedTo="navigatedTo">
     
     <ActionBar class="action-bar" title="{{ title}}" >
-        <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
-        
+        <StackLayout orientation="horizontal" class="action-bar" width="100%">
+           <Label row="0" tap="goBack" text="&#xf0a8;" color="white" class="fas p-t-5" fontSize="22" width="10%"  />
+           <Label text="{{ title }}" textWrap="true" fontSize="20" class="action-bar b" width="90%" />
+           
+       </StackLayout>
     </ActionBar>
     <StackLayout orientation="vertical" >
         <ScrollView pinch="onPinch" >
@@ -14,28 +17,28 @@
                     <StackLayout  />
                 </Repeater.itemsLayout>
                 <Repeater.itemTemplate >
-                    <StackLayout  class="{{ VerseNumber%2==0 ? 'alt ' + verseHighlight: verseHighlight }}" >
+                    <StackLayout  class="{{ VerseNumber%2==0 ? 'alt ' + verseHighlight: verseHighlight }}" tap="onItemTap" >
                         <StackLayout orientation="horizontal"      >
                             <Label text="{{ VerseNumber }}" textWrap="false" class="number m-t-5 m-l-10" verticalAlignment="top" fontSize="{{ 20 * scale}}"  />
                             <Label text="{{ VerseText }}" textWrap="true" class="verse m-l-5 m-r-10 m-t-5"  fontSize="{{ 22 * scale}}" longPress="onLongPress"   />
                         
                         </StackLayout>
-                        <StackLayout visibility="visible" width="100%" >
+                        <StackLayout visibility="visible" width="100%"  >
                             
-                                <Repeater items="{{ crossreferences }}" visibility="{{ showCrossRefs ? 'visible': 'collapsed'}}">
+                                <Repeater items="{{ crossreferences }}" visibility="{{ showCrossRefs ? 'visible': 'collapsed'}}" >
                                     <Repeater.itemsLayout>
-                                        <StackLayout  />
+                                        <StackLayout class="crnote" />
                                     </Repeater.itemsLayout>
                                         
                                     <Repeater.itemTemplate>
                                         <StackLayout  >
-                                            <Label class="crtitle m-t-5 m-l-20" fontSize="{{ 20 * scale}}" >
+                                            <Label class="crtitle" fontSize="{{ 20 * scale}}" >
                                                 <FormattedString>
                                                     <Span text="{{ Name  + ' ' + TargetChapterID + ': ' + TargetVerseNumber }}" fontAttributes="Italic" ></Span>
                                                 </FormattedString>
                                             </Label>
                                              
-                                            <Label text="{{ VerseText }}" textWrap="true" class="crtext m-l-25 m-r-10 m-t-5"  fontSize="{{ 20 * scale}}" fontAttributes="Italic" />
+                                            <Label text="{{ VerseText }}" textWrap="true" class="crtext"  fontSize="{{ 20 * scale}}" fontAttributes="Italic" />
                                             
                                         </StackLayout>
                                     </Repeater.itemTemplate>

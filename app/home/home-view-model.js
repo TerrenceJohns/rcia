@@ -12,7 +12,11 @@ function HomeViewModel() {
                 SourceChapterID,
                 SourceVerseNumber
             );`
-            db.execSQL(sql);
+            db.execSQL(sql, function(res) {
+                console.log('All good');
+            }, function(err){
+                    console.log(err);
+            });
         });
     } 
     

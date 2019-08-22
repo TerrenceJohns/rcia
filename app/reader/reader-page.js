@@ -5,7 +5,7 @@ const ReaderViewModel = require("./reader-view-model");
 const socialShareModule = require("nativescript-social-share");
 var gestures = require("tns-core-modules/ui/gestures");
 const Sqlite = require( "nativescript-sqlite" );
-var Toast = require("nativescript-toast");
+
 
 
 var showedHelp = false;
@@ -18,6 +18,7 @@ var selectedHighlight = "highlight1";
 
 function onNavigatingTo(args) {
     page = args.object;
+    console.log(page.navigationContext);
     BookID = page.navigationContext.BookID;
     ChapterID = page.navigationContext.ChapterID;
     var bibleBook = {title:"", verses:[] };
@@ -31,7 +32,7 @@ function onNavigatingTo(args) {
     if (!showedHelp){
         const alertOptions = {
             title: "INFO",
-            message: "'PRESS' verse: long press to view cross references",
+            message: `'PRESS': View cross references.\n\n'TAP': Select or highlight verse.\n\n'SWIPE': Share\n`,
             okButtonText: "Got it",
             cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
         };
@@ -151,15 +152,34 @@ function verseSwiped(args) {
     var selectedVerses = page.bindingContext.verses.filter(elem=>{
         return elem.verseHighlight != '';
     }); 
-
-    var shareString = bookName + ' ' + chapter + '\n'; 
-    selectedVerses.forEach(vs=>{
-        shareString = shareString + vs.number + '. ' + vs.text + '\n'; 
-    });
+    if(selectedVerses.length != 0  ) {
+        var shareString = page.bindingContext.title + '\n'  
+        selectedVerses.forEach(vs=>{
+            shareString = shareString + vs.VerseNumber + '. ' + vs.VerseText + '\n'; 
+        });
      
-    socialShareModule.shareText(shareString,"How would you like to share this passage?");
+        socialShareModule.shareText(shareString,"How would you like to share this passage?");
+    } else {
+        const alertOptions = {
+            title: "Select verses to share",
+            message: "Select verses to share by tapping each verse",
+            okButtonText: "Got it",
+            cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
+        };
+        alert(alertOptions).then(() => {
+            var i = 0;
+        });
+
+    }
+
+    
 }
 
+function goBack(args) {
+    page.frame.goBack();
+}
+
+exports.goBack = goBack;
 exports.navigatedTo = navigatedTo;
 exports.verseSwiped = verseSwiped;
 exports.onItemTap = onItemTap; 

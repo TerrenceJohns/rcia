@@ -10,9 +10,8 @@
             <Label text="&#xf0a6;" class="fas"  />
         </ActionItem>
     </ActionBar>
-
     <StackLayout class="page-content">
-        <WebView id="webview" src="{{ccc}}" loaded="onWebViewLoaded" class="p-l-10 p-r-10" />
+        <WebView id="webview" src="{{ccc}}" loaded="onWebViewLoaded" class="p-l-10 p-r-10" width="98%" />
         <ActivityIndicator busy="{{ isLoading }}" />
     </StackLayout>
 </Page>

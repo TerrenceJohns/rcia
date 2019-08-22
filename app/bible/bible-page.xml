@@ -3,16 +3,7 @@
     xmlns="http://www.nativescript.org/tns.xsd">
     
     <ActionBar class="action-bar">
-        <!-- 
-        Use the NavigationButton as a side-drawer button in Android
-        because ActionItems are shown on the right side of the ActionBar
-        -->
         <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
-        <!-- 
-        Use the ActionItem for IOS with position set to left. Using the
-        NavigationButton as a side-drawer button in iOS is not possible,
-        because its function is to always navigate back in the application.
-        -->
         <ActionItem icon="res://navigation/menu" 
             android:visibility="collapsed" 
             tap="onDrawerButtonTap"
@@ -22,64 +13,47 @@
     </ActionBar>
     <TabView id="tabViewContainer">
     <TabViewItem title="Old Testament"  >
-        <StackLayout id="ltOTStack" class="page-content p-t-30"  >
-        <Label class="page-centertext bold" textWrap="true" text="Contents"  ></Label>
-        <StackLayout class="hr-light"  />
-        <ListView id="lstOTBooks" items="{{ otbooks }}" 
-            pinch="onPinch" 
-          separatorColor="blue" 
-          class="list-group" itemTap="onItemTap"  >
-            <ListView.itemTemplate >
-                <!-- The item template can only have a single root view container (e.g. GriLayout, StackLayout, etc.) -->
+        <ListView id="otListView" items="{{ otcategories }}" separatorColor="blue" class="list-group" >
+            <ListView.itemTemplate>
                 <StackLayout class="list-group-item" >
-                    <Label text="{{ Name }}" textWrap="True" class="title" fontSize="22"/>
-                    <Repeater id="rptChapters" 
-                        items="{{ chapters }}" 
-                        visibility="{{ visible }}" >
+                    <StackLayout orientation="horizontal" width="100%">
+                        <Label text="{{ name }}" textWrap="true" class="title category" fontSize="22" width="90%"/>
+                        <Label row="0" tap="showInfo" text="{{ show=='collapsed' ? '&#xf05a;':'&#xf057;' }}" class="fas" fontSize="20" width="10%"  />    
+                    </StackLayout>
+                    <Label text="{{ note }}" textWrap="true" visibility="{{ show }}" class="note" />
+                    
+                    <Repeater items="{{ $value.books }}" >
                         <Repeater.itemsLayout>
-                            <WrapLayout orientation="horizontal" />                            
+                            <WrapLayout width="100%" />
                         </Repeater.itemsLayout>
-                        <Repeater.itemTemplate  >
-                            <Button text="{{'[' +  $value + ']' }}" width="100" 
-                            height="50" class="pre" onTap="onChapterTap" fontSize="18" />
+                        <Repeater.itemTemplate>
+                            <Button text="{{ Name }}" tap="onTap" width="50%" />
                         </Repeater.itemTemplate>
                     </Repeater>
                 </StackLayout>
             </ListView.itemTemplate>
         </ListView>
-        <ActivityIndicator id="myIndicator" busy="{{ isLoading }}" />
-    </StackLayout>
     </TabViewItem>
     <TabViewItem title="New Testment" >
-    <StackLayout id="ltNTStack" class="page-content p-t-30"  >
-        <Label class="page-centertext bold" textWrap="true" text="Contents"  ></Label>
-        <StackLayout class="hr-light"  />
-        <ListView id="lstNTBooks" items="{{ ntbooks }}" 
-            pinch="onPinch" 
-          separatorColor="blue" 
-          class="list-group" itemTap="onItemTap"  >
-            <ListView.itemTemplate >
-                <!-- The item template can only have a single root view container (e.g. GriLayout, StackLayout, etc.) -->
-                <StackLayout class="list-group-item" >
-                    <Label text="{{ Name }}" textWrap="True" class="title" fontSize="22"/>
-                    <Repeater id="rptChapters" 
-                        items="{{ chapters }}" 
-                        visibility="{{ visible }}" >
+        <ListView id="ntListView" items="{{ ntcategories }}" separatorColor="blue" class="list-group" >
+            <ListView.itemTemplate>
+                <StackLayout class="list-group-item"  >
+                    <StackLayout orientation="horizontal" width="100%">
+                        <Label text="{{ name }}" textWrap="true" class="title category" fontSize="22" width="90%"/>
+                        <Label row="0" tap="showInfo" text="{{ show=='collapsed' ? '&#xf05a;':'&#xf057;' }}" class="fas" fontSize="20" width="10%"  />    
+                    </StackLayout>
+                    <Label text="{{ note }}" visibility="{{ show }}" fontSize="18" textWrap="true" class="note" />
+                    <Repeater items="{{ $value.books }}">
                         <Repeater.itemsLayout>
-                            <WrapLayout orientation="horizontal" />                            
+                            <WrapLayout width="100%" />
                         </Repeater.itemsLayout>
-                        <Repeater.itemTemplate  >
-                            <Button text="{{'[' +  $value + ']' }}" width="100" 
-                            height="50" class="pre" onTap="onChapterTap" fontSize="18" />
-                            
+                        <Repeater.itemTemplate>
+                            <Button text="{{ Name }}" tap="onTap" width="50%" />
                         </Repeater.itemTemplate>
                     </Repeater>
                 </StackLayout>
             </ListView.itemTemplate>
         </ListView>
-       
-    </StackLayout>
-
     </TabViewItem>
     </TabView>
 
